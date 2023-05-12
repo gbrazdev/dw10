@@ -44,3 +44,7 @@ class TextStyles {
         fontSize: 22,
       );
 }
+
+extension TextStylesExtensions on BuildContext {
+  TextStyles get textStyles => TextStyles.instance;
+}
