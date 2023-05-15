@@ -42,55 +42,57 @@ class LoginPage extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Padding(
-                padding: EdgeInsets.all(30),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    FractionallySizedBox(
-                      widthFactor: .3,
-                      child: Image.asset('assets/images/logo.png'),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        'Login',
-                        style: context.textStyles.textTitle,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      FractionallySizedBox(
+                        widthFactor: .3,
+                        child: Image.asset('assets/images/logo.png'),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Email',
-                        hintText: 'Digite seu email',
+                      const SizedBox(
+                        height: 20,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Senha',
-                        hintText: 'Digite sua Senha',
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          'Login',
+                          style: context.textStyles.textTitle,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Entrar'),
+                      const SizedBox(
+                        height: 20,
                       ),
-                    ),
-                  ],
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          hintText: 'Digite seu email',
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Senha',
+                          hintText: 'Digite sua Senha',
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Entrar'),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
