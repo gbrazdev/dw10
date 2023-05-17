@@ -6,6 +6,7 @@ import 'package:delivery_backoffice/src/modules/login/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
+import 'package:validatorless/validatorless.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -112,17 +113,20 @@ class _LoginPageState extends State<LoginPage> with Loader, Messages {
                         const SizedBox(
                           height: 20,
                         ),
-                        TextField(
-                          controller: emailEC,
-                          decoration: InputDecoration(
-                            labelText: 'Email',
-                            hintText: 'Digite seu email',
-                          ),
-                        ),
+                        TextFormField(
+                            controller: emailEC,
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              hintText: 'Digite seu email',
+                            ),
+                            validator: Validatorless.multiple([
+                              Validatorless.required('Email obrigatório'),
+                              Validatorless.email('Email inválido'),
+                            ])),
                         const SizedBox(
                           height: 20,
                         ),
-                        TextField(
+                        TextFormField(
                           controller: passwordEC,
                           decoration: InputDecoration(
                             labelText: 'Senha',
